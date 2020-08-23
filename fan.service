@@ -1,0 +1,21 @@
+[Unit]
+Description=Fan Service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=~
+ExecStart=/root/fan.binary
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
+
+# sudo cp ~/fan.service/fan.service /etc/systemd/system/fan.service
+# sudo cp ~/fan.service/fan.binary /root/fan.binary
+# sudo systemctl daemon-reload && sudo systemctl enable fan.service && sudo systemctl start fan.service
+
+# sudo nano ~/.bash_profile
+# alias fan_start='sudo systemctl start fan.service'
+# alias fan_status='sudo systemctl status fan.service'
+# alias fan_stop='sudo systemctl stop fan.service'

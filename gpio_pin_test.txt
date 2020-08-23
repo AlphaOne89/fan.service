@@ -1,0 +1,24 @@
+
+    /sys/class/thermal/thermal_zone0/temp
+
+    gpio -g mode 26 pwm
+
+    gpio -g pwm 26 512
+
+    gpio -g mode 26 out
+
+    gpio -g write 26 1
+
+    gpio -g read 26
+
+    echo "26" > /sys/class/gpio/export
+
+    echo "out" > /sys/class/gpio/gpio26/direction
+
+    echo "1" > /sys/class/gpio/gpio26/value
+
+    cat /sys/class/gpio/gpio26/value
+
+    echo "0" > /sys/class/gpio/gpio26/value
+
+    echo "26" > /sys/class/gpio/unexport
